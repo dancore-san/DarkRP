@@ -72,11 +72,6 @@
         }
       },
       {
-        "__type": "PlayerPusher",
-        "__guid": "1a2f088d-0f98-4d5a-903b-2ae54f035714",
-        "Radius": 70
-      },
-      {
         "__type": "Sandbox.Voice",
         "__guid": "ec6c78ca-d23a-4cc2-987f-408d2efe9f23",
         "Loopback": false,
@@ -147,7 +142,7 @@
       {
         "__type": "Sandbox.CapsuleCollider",
         "__guid": "24cf163b-5de7-4510-a0ea-86bab3cf7f8e",
-        "End": "0,0,10",
+        "End": "0,0,50",
         "IsTrigger": false,
         "Radius": 10,
         "Start": "0,0,0",
@@ -159,6 +154,19 @@
         "DrawDebugInteract": false,
         "InteractRange": 120,
         "InteractTag": "Interact"
+      },
+      {
+        "__type": "PropToolManager",
+        "__guid": "4fcf67f7-bda0-423a-a002-3ce20775594b",
+        "PropLimit": 50,
+        "PropPrefab": {
+          "_type": "gameobject",
+          "prefab": "prefab/prop.prefab"
+        },
+        "Screen": {
+          "_type": "gameobject",
+          "go": "ad6ed4b5-d799-468d-a0e1-546cb904eaa8"
+        }
       }
     ],
     "Children": [
@@ -328,8 +336,8 @@
                   "Id": 4,
                   "Type": "call",
                   "Properties": {
-                    "_isStatic": false,
                     "_type": "Sandbox.GameObject",
+                    "_isStatic": false,
                     "_name": "Destroy"
                   },
                   "UserData": {
@@ -375,8 +383,8 @@
                   "Id": 20,
                   "Type": "property",
                   "Properties": {
-                    "_type": "Sandbox.GameObject",
-                    "_name": "Children"
+                    "_name": "Children",
+                    "_type": "Sandbox.GameObject"
                   },
                   "UserData": {
                     "Position": "432,160"
@@ -386,8 +394,8 @@
                   "Id": 21,
                   "Type": "call",
                   "Properties": {
-                    "_isStatic": false,
                     "_type": "System.Collections.Generic.List\u00601",
+                    "_isStatic": false,
                     "_name": "ForEach"
                   },
                   "UserData": {
@@ -412,9 +420,9 @@
                   "Id": 26,
                   "Type": "call",
                   "Properties": {
-                    "_isStatic": false,
+                    "_name": "Destroy",
                     "_type": "Sandbox.GameObject",
-                    "_name": "Destroy"
+                    "_isStatic": false
                   },
                   "UserData": {
                     "Position": "1072,112"
@@ -457,9 +465,9 @@
                   "Id": 30,
                   "Type": "call",
                   "Properties": {
-                    "_isStatic": false,
+                    "_name": "Destroy",
                     "_type": "Sandbox.GameObject",
-                    "_name": "Destroy"
+                    "_isStatic": false
                   },
                   "UserData": {
                     "Position": "80,432"
@@ -508,8 +516,8 @@
                   "Id": 40,
                   "Type": "call",
                   "Properties": {
-                    "_isStatic": false,
                     "_type": "Sandbox.GameObject",
+                    "_isStatic": false,
                     "_name": "Destroy"
                   },
                   "UserData": {
@@ -684,8 +692,8 @@
           {
             "__type": "BasicMenu",
             "__guid": "66371a07-fbb7-48a3-90fb-66f40db9152e",
-            "InfoCredits": "Sousou : ( Base GameMode \u002B Github Management ) | QueenPM : ( Chat Improvement \u002B Tab Menu UI Rework ) | HankKitts : ( Money 3D Models )",
-            "InfoDone": "Player and Camera Controller | Network Manager | Chat | Clothing | Ambient Audio | VOIP | Basic HUD | Money | Salary | Printer (90%) | Interaction System ",
+            "InfoCredits": "Sousou : Base GameMode \u002B Github Management | QueenPM : Chat Improvement \u002B Tab Menu UI Rework | HankKitts : Money 3D Models | Dancore: Entity system, code optimization | Bozy: Team/job system foundation | IRLadderGoat: Scoreboard foundation | Mangrogred : UI Tweak, Money pickup | Stefan : Job Improvement ",
+            "InfoDone": "Player and Camera Controller | Network Manager | Chat | Clothing | Ambient Audio | VOIP | Basic HUD | Money | Salary | Printer (90%) | Interaction System | Notifications | Entity and Props ",
             "InfoNotes": "Everything that you see here is subject to change and placeholders. You can help to develop the project here ( https://github.com/sousou63/DarkRP ) or ( https://discord.gg/yBDk9Xr6VB )",
             "InfoTodo": " Health | Stamina | Food | Jobs | Housing | Weapons | Persistence | Etc...",
             "OnComponentDisabled": {
@@ -891,7 +899,19 @@
             "PrinterPrefab": {
               "_type": "gameobject",
               "prefab": "prefab/printer.prefab"
-            }
+            },
+            "Props": [
+              "models/citizen_props/chair01.vmdl",
+              "models/citizen_props/trashcan01.vmdl",
+              "models/citizen_props/crate01.vmdl",
+              "models/citizen_props/chair04blackleather.vmdl",
+              "models/citizen_props/trashcan01.vmdl",
+              "models/citizen_props/concreteroaddivider01.vmdl",
+              "models/citizen_props/recyclingbin01/recyclingbin01gib_lod01.vmdl",
+              "models/citizen_props/wheel01.vmdl",
+              "models/citizen_props/trashbag02.vmdl",
+              "models/citizen_props/cardboardbox01.vmdl"
+            ]
           }
         ]
       },
@@ -899,7 +919,7 @@
         "__guid": "ec1ef818-48a4-45c5-87f6-ad454af3e172",
         "Flags": 0,
         "Name": "Nameplates",
-        "Position": "0,0,83.15387",
+        "Position": "0.6025014,0,83.15387",
         "Enabled": true,
         "Components": [
           {
@@ -1074,8 +1094,8 @@
                   "Id": 4,
                   "Type": "property",
                   "Properties": {
-                    "_type": "Sandbox.Component",
-                    "_name": "Enabled"
+                    "_name": "Enabled",
+                    "_type": "Sandbox.Component"
                   },
                   "UserData": {
                     "Position": "720,-16"
@@ -1128,8 +1148,8 @@
                   "Id": 18,
                   "Type": "call",
                   "Properties": {
-                    "_isStatic": false,
                     "_type": "GameController",
+                    "_isStatic": false,
                     "_name": "GetAllPlayers"
                   },
                   "UserData": {
@@ -1140,9 +1160,9 @@
                   "Id": 23,
                   "Type": "call",
                   "Properties": {
-                    "_isStatic": false,
+                    "_name": "Reset",
                     "_type": "Sandbox.Component",
-                    "_name": "Reset"
+                    "_isStatic": false
                   },
                   "UserData": {
                     "Position": "720,112"
@@ -1347,8 +1367,8 @@
                   "Id": 2,
                   "Type": "call",
                   "Properties": {
-                    "_isStatic": false,
                     "_type": "GameController",
+                    "_isStatic": false,
                     "_name": "GetAllPlayers"
                   },
                   "UserData": {

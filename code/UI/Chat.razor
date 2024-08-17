@@ -22,6 +22,11 @@
                     <div class="timestamp">@entry.timestamp</div>
                     @if (entry.steamid > 0)
                     {
+                        var userGroup = GameController?.GetPlayerBySteamID(entry.steamid)?.GetHighestUserGroup();
+                        @if ( userGroup is not null)
+                        {
+                            <div class="user-group" style="color: rgb(@(255 * userGroup.Color.r), @(255 * userGroup.Color.g), @(255 * userGroup.Color.b));">@userGroup.DisplayName</div>
+                        }
                         <div class="avatar" style="background-image: url( avatar:@entry.steamid )"></div>
                     }
                     <div class="author">@entry.author</div>
@@ -82,6 +87,7 @@
     }
     public List<Entry> Messages = new();
     private ConfigManager ConfigManager;
+    private GameController GameController;
     public List<string> CommandSuggestions = new();
 
     // ConfigManager is a helper class that allows us to register commands and other things
@@ -99,7 +105,7 @@
             }
 
             ConfigManager = GameControllerObject.Components.Get<ConfigManager>();
-            if ( ConfigManager == null ) return;
+            GameController = GameControllerObject.Components.Get<GameController>();
             
         }catch (Exception e)
         {
@@ -218,19 +224,17 @@
         SendMessage( message, true );
     }
 
-	void Component.INetworkListener.OnConnected( Connection channel )
+    @* void INetworkListener.OnDisconnected( Connection channel )
 	{
-		if ( IsProxy ) return;
-
-		NewSystemMessage( $"{channel.DisplayName} has joined the game" );
+        if ( IsProxy ) return;
+		NewSystemMessage( $"{channel.DisplayName} has left the game." );
 	}
 
-	void Component.INetworkListener.OnDisconnected( Connection channel )
+    void INetworkListener.OnConnected( Connection channel )
 	{
-		if ( IsProxy ) return;
-
-		NewSystemMessage( $"{channel.DisplayName} has left the game" );
-	}
+        if ( IsProxy ) return;
+		NewSystemMessage( $"{channel.DisplayName} has joined the game." );
+	} *@
 
     public void ClearChat()
     {

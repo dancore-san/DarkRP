@@ -1,8 +1,9 @@
 Chat {
 	position: absolute;
-	bottom: 300px;
-	left: 100px;
-	width: 600px;
+	bottom: 250px;
+	left: 70px;
+	width: 30vw;
+	height: 20vw;
 	justify-content: center;
 	font-weight: bold;
 	border-radius: 20px;
@@ -41,12 +42,20 @@ Chat {
 				color: #f3f3f3;
 				flex-shrink: 0;
 				font-family: 'Times New Roman', serif;
-				width: 70px;
+			}
+
+			.user-group {
+				padding: 0;
+				margin: 0;
+				display: flex;
+				text-align: center;
+				justify-content: center;
+				color: rgb(231, 197, 84);
 			}
 
 			.avatar {
-				width: 45px;
-				height: 30px;
+				width: 25px;
+				height: 25px;
 				margin-left: 5px;
 				margin-right: 5px;
 				background-position: center;
@@ -62,6 +71,9 @@ Chat {
 			.message {
 				color: #fff;
 				width: 100%;
+				flex-basis: 50%;
+				flex-grow: 1;
+				flex-shrink: 1;
 			}
 		}
 	}
@@ -69,7 +81,8 @@ Chat {
 
 	&.open {
 		pointer-events: all;
-		.output,.header,.input{
+
+		.output, .header, .input {
 			background-color: #73737370;
 		}
 	}
@@ -93,6 +106,4 @@ Chat {
 			flex-direction: column;
 		}
 	}
-
-
 }
