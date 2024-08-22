@@ -85,10 +85,6 @@
         "__type": "GameSystems.Interaction.InteractionSystem",
         "__guid": "8e6101e4-e3ac-414a-a4ed-173b57f3e363",
         "DrawDebugInteract": false,
-        "HoldingArea": {
-          "_type": "gameobject",
-          "go": "21fd671e-27ba-4843-aaea-2a58cdb3f390"
-        },
         "InteractRange": 120,
         "InteractTag": "Interact"
       },
@@ -104,6 +100,11 @@
           "_type": "gameobject",
           "go": "ad6ed4b5-d799-468d-a0e1-546cb904eaa8"
         }
+      },
+      {
+        "__type": "Inventory",
+        "__guid": "852fd4e7-8461-4b98-ae5d-df0fad1012bf",
+        "InventoryVisibilityDelay": 3
       },
       {
         "__type": "GameSystems.Player.MovementController",
@@ -133,11 +134,6 @@
         "WalkMoveSpeed": 175
       },
       {
-        "__type": "Inventory",
-        "__guid": "852fd4e7-8461-4b98-ae5d-df0fad1012bf",
-        "InventoryVisibilityDelay": 3
-      },
-      {
         "__type": "GameSystems.Player.Stats",
         "__guid": "f6680f91-296d-4b6f-8810-42acacfa096d",
         "Balance": 1250,
@@ -145,10 +141,25 @@
         "Doors": [],
         "HealthBase": 100,
         "HungerBase": 100,
-        "SalaryAmount": 50,
         "SalaryTimerSeconds": 60,
         "Starving": false,
         "StarvingTimerSeconds": 20
+      },
+      {
+        "__type": "Sandbox.Weapons.Default.Hands",
+        "__guid": "c1fa8775-caf0-48ee-9b85-494bd0247fcf",
+        "GrabbableTag": "grab",
+        "HoldDistance": 70,
+        "InteractRange": 150,
+        "MaxReleaseVelocity": 500,
+        "MovementController": {
+          "_type": "component",
+          "component_id": "80152a82-7bc7-4840-b0ab-54df118a57ec",
+          "go": "2f0c5e5d-2852-453b-8cda-f6bb92e65678",
+          "component_type": "MovementController"
+        },
+        "RotateSpeed": 0.3,
+        "ThrowForce": 100
       }
     ],
     "Children": [
@@ -1100,7 +1111,7 @@
                     "T": "LeaderBoard"
                   },
                   "UserData": {
-                    "Position": "192,80"
+                    "Position": "224,192"
                   }
                 },
                 {
@@ -1416,16 +1427,102 @@
                   "DstName": "_this"
                 }
               ]
+            },
+            "OnComponentFixedUpdate": {
+              "__version": 7,
+              "__guid": "681b35fe-039c-4434-b060-e2e8cad0f949",
+              "UserData": {
+                "Title": "On Component Fixed Update",
+                "ReferencedComponentTypes": [
+                  "LeaderBoard"
+                ]
+              },
+              "Variables": [],
+              "Nodes": [
+                {
+                  "Id": 0,
+                  "Type": "input"
+                },
+                {
+                  "Id": 1,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Instance",
+                    "_type": "GameSystems.GameController"
+                  },
+                  "UserData": {
+                    "Position": "64,64"
+                  }
+                },
+                {
+                  "Id": 2,
+                  "Type": "call",
+                  "Properties": {
+                    "_name": "GetAllPlayers",
+                    "_type": "GameSystems.GameController",
+                    "_isStatic": false
+                  },
+                  "UserData": {
+                    "Position": "240,0"
+                  }
+                },
+                {
+                  "Id": 3,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Players",
+                    "_type": "LeaderBoard"
+                  },
+                  "UserData": {
+                    "Position": "560,-16"
+                  }
+                },
+                {
+                  "Id": 4,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "LeaderBoard"
+                  },
+                  "UserData": {
+                    "Position": "256,80"
+                  }
+                }
+              ],
+              "Links": [
+                {
+                  "SrcId": 1,
+                  "SrcName": "_result",
+                  "DstId": 2,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 2,
+                  "SrcName": "_signal",
+                  "DstId": 3,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 4,
+                  "SrcName": "_result",
+                  "DstId": 3,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 2,
+                  "SrcName": "_result",
+                  "DstId": 3,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 4,
+                  "DstName": "_this"
+                }
+              ]
             }
           }
         ]
-      },
-      {
-        "__guid": "21fd671e-27ba-4843-aaea-2a58cdb3f390",
-        "Flags": 0,
-        "Name": "HoldingArea",
-        "Position": "60,0.000007153841,55",
-        "Enabled": true
       }
     ],
     "__variables": []
