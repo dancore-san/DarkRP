@@ -1,5 +1,7 @@
 {
-  "__guid": "ed65f53e-a0fe-45f4-b010-0f8789c80ae0",
+
+  "__guid": "e12fc378-b298-4bad-8590-631919a39bfd",
+  
   "GameObjects": [
     {
       "__guid": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a",
@@ -87,16 +89,16 @@
       "NetworkOrphaned": 1,
       "Components": [
         {
-          "__type": "GameSystems.GameController",
-          "__guid": "1059b5f5-6a85-44a9-9079-8a36e10e9062"
-        },
-        {
           "__type": "GameSystems.Config.ConfigManager",
           "__guid": "5611e3a0-392e-4394-9f06-7a9e8195f060",
           "MoneyPrefab": {
             "_type": "gameobject",
             "prefab": "prefab/money.prefab"
           }
+        },
+        {
+          "__type": "GameSystems.GameController",
+          "__guid": "b1a2a595-dab4-4505-b927-07b149373d20"
         }
       ]
     },
@@ -383,7 +385,9 @@
       "__guid": "8fbc26de-68d3-465e-91d4-31c22c6282e9",
       "Flags": 0,
       "Name": "door (3)",
-      "Position": "-733.3755,-1814.685,169.9049",
+      "Position": "-61.8578,-2482.226,168.2727",
+      "Rotation": "0,0,0.7071067,0.7071068",
+      "Scale": "1,1.38,1.36",
       "Tags": "interact",
       "Enabled": true,
       "NetworkMode": 1,
@@ -392,20 +396,76 @@
       "__PrefabVariables": {}
     },
     {
-      "__guid": "bdaebe52-da22-4d32-b7c7-bd349b9a5dd4",
+      "__guid": "53435d86-4d43-4fbd-9edf-661f12f2bd64",
       "Flags": 0,
-      "Name": "temp_door_001a_frame (3)",
-      "Position": "-733.3742,-1814.633,169.4664",
+      "Name": "door (4)",
+      "Position": "552,-1705.465,168.2727",
+      "Scale": "1,1.38,1.36",
+      "Tags": "interact",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "NetworkOrphaned": 1,
+      "__Prefab": "prefab/door.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "dcfc110e-dbfe-4fcf-be11-da652754cadd",
+      "Flags": 0,
+      "Name": "door (5)",
+      "Position": "720.4877,-1658.169,168.2727",
+      "Scale": "1,1.38,1.36",
+      "Tags": "interact",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "NetworkOrphaned": 1,
+      "__Prefab": "prefab/door.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "9f43e73d-f763-45c6-877a-680b296fb3d4",
+      "Flags": 0,
+      "Name": "GameObject",
+      "Enabled": true
+    },
+    {
+      "__guid": "c74fbfea-c25a-425c-b9c4-52d0cb0b54d9",
+      "Flags": 0,
+      "Name": "TEMP SPAWN TEXT",
+      "Position": "-957.0762,-2772.121,219.8589",
+      "Rotation": "0,0,0.02617695,0.9996573",
       "Enabled": true,
       "Components": [
         {
-          "__type": "Sandbox.Prop",
-          "__guid": "cc971a48-aea5-4d2a-8a93-121e8ff059ee",
-          "BodyGroups": 18446744073709551615,
-          "Health": 0,
-          "IsStatic": true,
-          "Model": "models/darkrp_map/temp_door_001a_frame.vmdl",
-          "Tint": "0.05116,0.03197,0.02308,1"
+          "__type": "Sandbox.TextRenderer",
+          "__guid": "d122169b-6381-4bca-a513-a077c22f0487",
+          "Color": "0.45103,0.47149,0.5297,1",
+          "FontFamily": "Poppins",
+          "FontSize": 64,
+          "FontWeight": 800,
+          "Scale": 0.3,
+          "Text": "Turn Around \uD83E\uDD26\n(fix this)",
+          "TextAlignment": "Center"
+        }
+      ]
+    },
+    {
+      "__guid": "aaed1c6a-c875-482b-b24f-ef574ecf6df8",
+      "Flags": 0,
+      "Name": "TEMP SPAWN TEXT",
+      "Position": "-957.0762,200.3775,219.8589",
+      "Rotation": "0,0,0.02617695,0.9996573",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.TextRenderer",
+          "__guid": "d958a8ee-e09f-47d0-9b9b-f3ededcd8f78",
+          "Color": "0.45103,0.47149,0.5297,1",
+          "FontFamily": "Poppins",
+          "FontSize": 64,
+          "FontWeight": 800,
+          "Scale": 0.3,
+          "Text": "Turn Around\uD83E\uDD26\n(fix this)",
+          "TextAlignment": "Center"
         }
       ]
     }
