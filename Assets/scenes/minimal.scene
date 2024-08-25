@@ -1,7 +1,5 @@
 {
-
-  "__guid": "e12fc378-b298-4bad-8590-631919a39bfd",
-  
+  "__guid": "e3c7aba6-ab93-4e2b-b849-062550483433",
   "GameObjects": [
     {
       "__guid": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a",
@@ -177,34 +175,10 @@
       ]
     },
     {
-      "__guid": "ea663a78-1aeb-4b8d-9703-3331d56dad3b",
-      "Flags": 0,
-      "Name": "Terrain",
-      "Position": "-19311.73,-20195,-1670.427",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.Terrain",
-          "__guid": "f1cec5d8-e793-4c4c-85a2-90b6fcd239b8",
-          "__version": 1,
-          "ClipMapLodExtentTexels": 256,
-          "ClipMapLodLevels": 6,
-          "DebugView": "None",
-          "EnableCollision": true,
-          "IsTrigger": false,
-          "RenderType": "Off",
-          "Static": true,
-          "Storage": "map/landscape/landscape.terrain",
-          "TerrainHeight": 10000,
-          "TerrainSize": 39936
-        }
-      ]
-    },
-    {
       "__guid": "b1363f39-b9e5-4401-9df9-f33607e21b71",
       "Flags": 0,
       "Name": "Map Instance",
-      "Position": "2653.494,-933.2069,-608.377",
+      "Position": "2653.947,-933.2069,-601.2447",
       "Enabled": true,
       "Components": [
         {
@@ -223,7 +197,7 @@
       "__guid": "25b3bef3-0fda-43dc-9fef-773bc446096c",
       "Flags": 0,
       "Name": "Cube",
-      "Position": "-746.6807,-1344.285,187.7818",
+      "Position": "-746.6805,-1382.88,187.7818",
       "Rotation": "0,0,-0.7071069,0.7071066",
       "Scale": "1,1,0.722172",
       "Enabled": true,
@@ -251,8 +225,8 @@
       "__guid": "396535a2-c872-4aa0-a88a-832bab9fe46c",
       "Flags": 0,
       "Name": "printer",
-      "Position": "-739.5702,-1221.134,172.4028",
-      "Rotation": "0,0,-0.7071069,0.7071066",
+      "Position": "-758.0123,-1161.398,183.6531",
+      "Rotation": "0,0,-0.9238796,0.3826833",
       "Tags": "printer,interact,grab",
       "Enabled": true,
       "NetworkMode": 1,
@@ -264,7 +238,7 @@
       "__guid": "faaa4319-1cc1-474e-a21b-e7bab0437191",
       "Flags": 0,
       "Name": "prop",
-      "Position": "-755.4434,-1337.741,208.3003",
+      "Position": "-755.4432,-1376.336,208.3003",
       "Rotation": "0,0,-0.7071069,0.7071066",
       "Tags": "prop,interact,grab",
       "Enabled": true,
@@ -277,7 +251,7 @@
       "__guid": "bb58b9c8-18d5-4219-a01c-6a5464790caf",
       "Flags": 0,
       "Name": "prop (1)",
-      "Position": "-756.4456,-1327.34,208.3003",
+      "Position": "-756.4454,-1365.935,208.3003",
       "Rotation": "0,0,-0.7071069,0.7071066",
       "Tags": "prop,interact,grab",
       "Enabled": true,
@@ -290,7 +264,7 @@
       "__guid": "83e07f29-9a65-449d-aae6-b7bb0562f39b",
       "Flags": 0,
       "Name": "prop (2)",
-      "Position": "-766.2938,-1331.54,208.3003",
+      "Position": "-766.2936,-1370.135,208.3003",
       "Rotation": "0,0,-0.7071069,0.7071066",
       "Tags": "prop,interact,grab",
       "Enabled": true,
@@ -303,7 +277,7 @@
       "__guid": "3d867b9c-2651-4dae-a5d4-d3952674f32a",
       "Flags": 0,
       "Name": "money",
-      "Position": "-751.1619,-1353.84,205.9034",
+      "Position": "-751.1617,-1392.435,205.9034",
       "Rotation": "0,0,-0.7071069,0.7071066",
       "Tags": "money,interactable,interact,grab",
       "Enabled": true,
@@ -314,7 +288,7 @@
       "__guid": "f359e953-56c4-490a-96f4-ab9f3a000025",
       "Flags": 0,
       "Name": "money (1)",
-      "Position": "-751.1619,-1350.164,205.9034",
+      "Position": "-751.1617,-1383.005,205.9034",
       "Rotation": "0,0,-0.7071069,0.7071066",
       "Tags": "money,interactable,interact,grab",
       "Enabled": true,
@@ -325,7 +299,7 @@
       "__guid": "e161b418-ea3e-4613-bb43-020edcd6c975",
       "Flags": 0,
       "Name": "door (1)",
-      "Position": "-733.3755,-1706.861,169.4836",
+      "Position": "-733.3755,-1706.861,175.6885",
       "Tags": "interact",
       "Enabled": true,
       "NetworkMode": 1,
@@ -337,7 +311,7 @@
       "__guid": "ed25c923-66e2-44b0-a287-91ed582dbc3a",
       "Flags": 0,
       "Name": "temp_door_001a_frame (1)",
-      "Position": "-733.3744,-1706.809,168.4838",
+      "Position": "-733.3744,-1706.809,174.6887",
       "Enabled": true,
       "Components": [
         {
@@ -355,7 +329,7 @@
       "__guid": "3979c2ce-8821-4ac8-a1ce-e0dd4f9839ec",
       "Flags": 0,
       "Name": "door (2)",
-      "Position": "-733.3757,-1598.793,169.4836",
+      "Position": "-733.3757,-1598.793,175.6885",
       "Tags": "interact",
       "Enabled": true,
       "NetworkMode": 1,
@@ -367,7 +341,7 @@
       "__guid": "048935d2-71c8-49ae-8c0d-551e35ae54eb",
       "Flags": 0,
       "Name": "temp_door_001a_frame (2)",
-      "Position": "-733.3747,-1598.742,168.4838",
+      "Position": "-733.3747,-1598.742,174.6887",
       "Enabled": true,
       "Components": [
         {
@@ -385,7 +359,7 @@
       "__guid": "8fbc26de-68d3-465e-91d4-31c22c6282e9",
       "Flags": 0,
       "Name": "door (3)",
-      "Position": "-61.8578,-2482.226,168.2727",
+      "Position": "-61.85779,-2482.226,175.4935",
       "Rotation": "0,0,0.7071067,0.7071068",
       "Scale": "1,1.38,1.36",
       "Tags": "interact",
@@ -399,7 +373,7 @@
       "__guid": "53435d86-4d43-4fbd-9edf-661f12f2bd64",
       "Flags": 0,
       "Name": "door (4)",
-      "Position": "552,-1705.465,168.2727",
+      "Position": "552,-1705.465,175.6112",
       "Scale": "1,1.38,1.36",
       "Tags": "interact",
       "Enabled": true,
@@ -412,7 +386,7 @@
       "__guid": "dcfc110e-dbfe-4fcf-be11-da652754cadd",
       "Flags": 0,
       "Name": "door (5)",
-      "Position": "720.4877,-1658.169,168.2727",
+      "Position": "720.4877,-1658.169,175.4599",
       "Scale": "1,1.38,1.36",
       "Tags": "interact",
       "Enabled": true,
@@ -466,6 +440,25 @@
           "Scale": 0.3,
           "Text": "Turn Around\uD83E\uDD26\n(fix this)",
           "TextAlignment": "Center"
+        }
+      ]
+    },
+    {
+      "__guid": "adbc2951-be68-4d54-83c5-d94521a5b171",
+      "Flags": 0,
+      "Name": "skybox_apartment001a",
+      "Position": "3071.052,1579.945,166.9576",
+      "Rotation": "0,0,-0.7071067,0.7071068",
+      "Scale": "0.2314866,0.2314866,0.2314866",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "d2d407c7-1dd0-4c83-92b9-e6e0d453533a",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/skybox/skybox_apartment001a.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
         }
       ]
     }
