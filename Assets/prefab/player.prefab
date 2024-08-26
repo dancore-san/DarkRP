@@ -143,8 +143,10 @@
         "Balance": 1250,
         "Dead": false,
         "Doors": [],
-        "HealthBase": 100,
-        "HungerBase": 100,
+        "Health": 100,
+        "Hunger": 100,
+        "HungerMax": 100,
+        "MaxHealth": 100,
         "SalaryTimerSeconds": 60,
         "Starving": false,
         "StarvingTimerSeconds": 20
@@ -213,8 +215,8 @@
                   "Id": 6,
                   "Type": "property",
                   "Properties": {
-                    "_type": "Sandbox.Component",
-                    "_name": "Enabled"
+                    "_name": "Enabled",
+                    "_type": "Sandbox.Component"
                   },
                   "UserData": {
                     "Position": "704,-64"
@@ -224,8 +226,8 @@
                   "Id": 7,
                   "Type": "property",
                   "Properties": {
-                    "_type": "Sandbox.Component",
-                    "_name": "Enabled"
+                    "_name": "Enabled",
+                    "_type": "Sandbox.Component"
                   },
                   "UserData": {
                     "Position": "720,128"
@@ -315,12 +317,12 @@
                   "Id": 37,
                   "Type": "property",
                   "Properties": {
+                    "_name": "IsOwner",
                     "_type": {
                       "$type": "Nested",
                       "DeclaringType": "Sandbox.GameObject",
                       "Name": "NetworkAccessor"
-                    },
-                    "_name": "IsOwner"
+                    }
                   },
                   "UserData": {
                     "Position": "-432,928"
@@ -354,8 +356,8 @@
                   "Id": 42,
                   "Type": "property",
                   "Properties": {
-                    "_type": "Sandbox.GameObject",
-                    "_name": "Network"
+                    "_name": "Network",
+                    "_type": "Sandbox.GameObject"
                   },
                   "UserData": {
                     "Position": "-624,928"
@@ -366,8 +368,8 @@
                   "Type": "call",
                   "Properties": {
                     "_isStatic": false,
-                    "_type": "Sandbox.GameObject",
-                    "_name": "Destroy"
+                    "_name": "Destroy",
+                    "_type": "Sandbox.GameObject"
                   },
                   "UserData": {
                     "Position": "16,896"
@@ -457,12 +459,12 @@
                   "Id": 2,
                   "Type": "property",
                   "Properties": {
+                    "_name": "IsOwner",
                     "_type": {
                       "$type": "Nested",
                       "DeclaringType": "Sandbox.GameObject",
                       "Name": "NetworkAccessor"
-                    },
-                    "_name": "IsOwner"
+                    }
                   },
                   "UserData": {
                     "Position": "-16,80"
@@ -479,8 +481,8 @@
                   "Id": 4,
                   "Type": "property",
                   "Properties": {
-                    "_type": "Sandbox.GameObject",
-                    "_name": "Network"
+                    "_name": "Network",
+                    "_type": "Sandbox.GameObject"
                   },
                   "UserData": {
                     "Position": "-208,80"
@@ -555,12 +557,12 @@
                   "Id": 2,
                   "Type": "property",
                   "Properties": {
+                    "_name": "IsOwner",
                     "_type": {
                       "$type": "Nested",
                       "DeclaringType": "Sandbox.GameObject",
                       "Name": "NetworkAccessor"
-                    },
-                    "_name": "IsOwner"
+                    }
                   },
                   "UserData": {
                     "Position": "-16,80"
@@ -577,8 +579,8 @@
                   "Id": 4,
                   "Type": "property",
                   "Properties": {
-                    "_type": "Sandbox.GameObject",
-                    "_name": "Network"
+                    "_name": "Network",
+                    "_type": "Sandbox.GameObject"
                   },
                   "UserData": {
                     "Position": "-208,80"
@@ -699,8 +701,8 @@
                   "Id": 3,
                   "Type": "property",
                   "Properties": {
-                    "_type": "Sandbox.GameObject",
-                    "_name": "Parent"
+                    "_name": "Parent",
+                    "_type": "Sandbox.GameObject"
                   },
                   "UserData": {
                     "Position": "-288,96"
@@ -710,8 +712,8 @@
                   "Id": 6,
                   "Type": "property",
                   "Properties": {
-                    "_type": "Sandbox.GameObject",
-                    "_name": "Network"
+                    "_name": "Network",
+                    "_type": "Sandbox.GameObject"
                   },
                   "UserData": {
                     "Position": "-128,96"
@@ -721,12 +723,12 @@
                   "Id": 7,
                   "Type": "property",
                   "Properties": {
+                    "_name": "OwnerConnection",
                     "_type": {
                       "$type": "Nested",
                       "DeclaringType": "Sandbox.GameObject",
                       "Name": "NetworkAccessor"
-                    },
-                    "_name": "OwnerConnection"
+                    }
                   },
                   "UserData": {
                     "Position": "80,96"
@@ -736,8 +738,8 @@
                   "Id": 9,
                   "Type": "property",
                   "Properties": {
-                    "_type": "Sandbox.Connection",
-                    "_name": "DisplayName"
+                    "_name": "DisplayName",
+                    "_type": "Sandbox.Connection"
                   },
                   "UserData": {
                     "Position": "416,96"
@@ -841,8 +843,8 @@
                   "Id": 4,
                   "Type": "property",
                   "Properties": {
-                    "_type": "Sandbox.Component",
-                    "_name": "Enabled"
+                    "_name": "Enabled",
+                    "_type": "Sandbox.Component"
                   },
                   "UserData": {
                     "Position": "720,-16"
@@ -852,8 +854,8 @@
                   "Id": 5,
                   "Type": "property",
                   "Properties": {
-                    "_type": "Sandbox.Component",
-                    "_name": "Enabled"
+                    "_name": "Enabled",
+                    "_type": "Sandbox.Component"
                   },
                   "UserData": {
                     "Position": "480,112"
@@ -873,8 +875,8 @@
                   "Id": 7,
                   "Type": "property",
                   "Properties": {
-                    "_type": "GameSystems.GameController",
-                    "_name": "Instance"
+                    "_name": "Instance",
+                    "_type": "GameSystems.GameController"
                   },
                   "UserData": {
                     "Position": "16,-32"
@@ -884,8 +886,8 @@
                   "Id": 9,
                   "Type": "property",
                   "Properties": {
-                    "_type": "LeaderBoard",
-                    "_name": "Players"
+                    "_name": "Players",
+                    "_type": "LeaderBoard"
                   },
                   "UserData": {
                     "Position": "480,-16"
@@ -896,8 +898,8 @@
                   "Type": "call",
                   "Properties": {
                     "_isStatic": false,
-                    "_type": "Sandbox.Component",
-                    "_name": "Reset"
+                    "_name": "Reset",
+                    "_type": "Sandbox.Component"
                   },
                   "UserData": {
                     "Position": "720,112"
@@ -908,8 +910,8 @@
                   "Type": "call",
                   "Properties": {
                     "_isStatic": false,
-                    "_type": "GameSystems.GameController",
-                    "_name": "GetAllPlayers"
+                    "_name": "GetAllPlayers",
+                    "_type": "GameSystems.GameController"
                   },
                   "UserData": {
                     "Position": "192,-16"
@@ -1055,8 +1057,8 @@
                   "Id": 9,
                   "Type": "property",
                   "Properties": {
-                    "_type": "LeaderBoard",
-                    "_name": "Players"
+                    "_name": "Players",
+                    "_type": "LeaderBoard"
                   },
                   "UserData": {
                     "Position": "208,48"
@@ -1103,8 +1105,8 @@
                   "Id": 1,
                   "Type": "property",
                   "Properties": {
-                    "_type": "GameSystems.GameController",
-                    "_name": "Instance"
+                    "_name": "Instance",
+                    "_type": "GameSystems.GameController"
                   },
                   "UserData": {
                     "Position": "96,64"
@@ -1114,8 +1116,8 @@
                   "Id": 4,
                   "Type": "property",
                   "Properties": {
-                    "_type": "LeaderBoard",
-                    "_name": "Players"
+                    "_name": "Players",
+                    "_type": "LeaderBoard"
                   },
                   "UserData": {
                     "Position": "592,-16"
@@ -1136,8 +1138,8 @@
                   "Type": "call",
                   "Properties": {
                     "_isStatic": false,
-                    "_type": "GameSystems.GameController",
-                    "_name": "GetAllPlayers"
+                    "_name": "GetAllPlayers",
+                    "_type": "GameSystems.GameController"
                   },
                   "UserData": {
                     "Position": "272,-0"
@@ -1183,6 +1185,76 @@
                 }
               ]
             }
+          }
+        ]
+      },
+      {
+        "__guid": "4cd83b94-b253-4955-8123-0a7e28793b4a",
+        "Flags": 0,
+        "Name": "Flashlight",
+        "Position": "6.202,0,63.841",
+        "Tags": "light_spot,light",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.SpotLight",
+            "__guid": "316f73a0-a3e8-4aeb-a298-3cccc24f7fcf",
+            "__enabled": false,
+            "Attenuation": 7.37,
+            "ConeInner": 64.88,
+            "ConeOuter": 22.95,
+            "FogMode": "Enabled",
+            "FogStrength": 1,
+            "LightColor": "0.91373,0.98039,1,1",
+            "Radius": 700,
+            "Shadows": false
+          },
+          {
+            "__type": "Flashlight",
+            "__guid": "ebe28aad-0c9c-479c-977b-54d0b9578e6b",
+            "light": {
+              "_type": "component",
+              "component_id": "316f73a0-a3e8-4aeb-a298-3cccc24f7fcf",
+              "go": "4cd83b94-b253-4955-8123-0a7e28793b4a",
+              "component_type": "SpotLight"
+            },
+            "mc": {
+              "_type": "component",
+              "component_id": "80152a82-7bc7-4840-b0ab-54df118a57ec",
+              "go": "2f0c5e5d-2852-453b-8cda-f6bb92e65678",
+              "component_type": "MovementController"
+            },
+            "soundPoint": {
+              "_type": "component",
+              "component_id": "4f91538b-962b-48ab-b29f-e8ce958d31e8",
+              "go": "4cd83b94-b253-4955-8123-0a7e28793b4a",
+              "component_type": "SoundPointComponent"
+            }
+          },
+          {
+            "__type": "Sandbox.SoundPointComponent",
+            "__guid": "4f91538b-962b-48ab-b29f-e8ce958d31e8",
+            "DistanceAttenuation": false,
+            "DistanceAttenuationOverride": false,
+            "Force2d": false,
+            "MaxRepeatTime": 1,
+            "MinRepeatTime": 1,
+            "Occlusion": false,
+            "OcclusionOverride": false,
+            "OcclusionRadius": 32,
+            "Pitch": 1,
+            "PlayOnStart": false,
+            "ReflectionOverride": false,
+            "Reflections": false,
+            "Repeat": false,
+            "SoundEvent": "audio/flashlighton.sound",
+            "SoundOverride": false,
+            "StopOnNew": true,
+            "TargetMixer": {
+              "Name": "game",
+              "Id": "b12b3054-0f4b-495a-b43a-e6469a03328a"
+            },
+            "Volume": 1
           }
         ]
       }
