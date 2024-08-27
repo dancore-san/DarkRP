@@ -14,7 +14,7 @@
           "__guid": "cf3cbf96-22b6-4be4-a5d0-672a96c17f9f",
           "BackgroundColor": "0.33333,0.46275,0.52157,1",
           "ClearFlags": "All",
-          "FieldOfView": 60,
+          "FieldOfView": 90,
           "IsMainCamera": true,
           "Orthographic": false,
           "OrthographicHeight": 1204,
@@ -75,6 +75,53 @@
         {
           "__type": "Sandbox.Highlight",
           "__guid": "22a24f62-f8ee-47bc-a1ec-8c6627bc8eb3"
+        },
+        {
+          "__type": "Sandbox.AmbientOcclusion",
+          "__guid": "327a9298-2ef8-4937-9982-0093edf62c89",
+          "FalloffDistance": 1,
+          "Intensity": 0,
+          "Quality": "High",
+          "Radius": 32
+        },
+        {
+          "__type": "Sandbox.Blur",
+          "__guid": "56d5898c-7b42-4acd-bf39-4ef6e51f311f",
+          "Size": 0
+        },
+        {
+          "__type": "Sandbox.ChromaticAberration",
+          "__guid": "0ab9787a-4f55-40e9-8fbc-9a692de34765",
+          "Offset": "4,6,0",
+          "Scale": 0
+        },
+        {
+          "__type": "Sandbox.ColorAdjustments",
+          "__guid": "4be6865b-f77b-457f-93a7-287cacf271ac",
+          "Brightness": 1,
+          "Contrast": 1,
+          "HueRotate": 0,
+          "Saturation": 1
+        },
+        {
+          "__type": "Sandbox.FilmGrain",
+          "__guid": "937a82ae-440d-4d66-9e49-49b72f81b3f2",
+          "Intensity": 0,
+          "Response": 0
+        },
+        {
+          "__type": "Sandbox.Pixelate",
+          "__guid": "76812f15-e13f-480e-abea-91c4a3ca1daa",
+          "Scale": 0
+        },
+        {
+          "__type": "Sandbox.Vignette",
+          "__guid": "f0ada4c5-743e-4fa2-9856-eb8d2b5cbbe9",
+          "Center": "0.5,0.5",
+          "Color": "0,0,0,1",
+          "Intensity": 0,
+          "Roundness": 1,
+          "Smoothness": 1
         }
       ]
     },

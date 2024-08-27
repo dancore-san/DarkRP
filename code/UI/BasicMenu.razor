@@ -6,6 +6,7 @@
 @using System;
 @using global::Entity.Interactable.Printer
 @using global::Entity.Interactable.Props
+@using global::Entity.Interactable.Drug;
 @using global::GameSystems
 @using global::GameSystems.Jobs
 @using Sandbox.Entities.Interactable.Props
@@ -96,6 +97,26 @@
                             <div class="price">$4,200</div>
                         </div>
                     </div>
+                </div>
+                <div class="section-title">Drugs</div>
+                <div class="section-contents">
+                <div class="button" onclick=@(() => BuyDrug(BaseDrug.DrugType.Shrooms, 100))>
+                    <div class="icon" style="background-color: #C5EA4C"></div>
+                    <div class="label-container">
+                        <div class="label">Shrooms</div>
+                        <span class="description">Have a nice trip</span>
+                        <div class="price">$100</div>
+                    </div>
+                </div>
+
+                <div class="button" onclick=@(() => BuyDrug(BaseDrug.DrugType.LSD, 100))>
+                    <div class="icon" style="background-color: #ff0000"></div>
+                    <div class="label-container">
+                        <div class="label">LSD</div>
+                        <span class="description">Have a nice trip</span>
+                        <div class="price">$100</div>
+                    </div>
+                </div>
                 </div>
             </div>
 
@@ -209,6 +230,7 @@
 @code {
     [Property] GameObject PrinterPrefab { get; set; }
     [Property] Player Player { get; set; }
+    [Property] GameObject DrugPrefab { get; set; }
     
     // Everything related to printers
     int MaxPrinter = 5;
@@ -238,6 +260,50 @@
         printer.NetworkSpawn(); // It spawns on all clients
         CurrentPrinter++;
     }
+
+    void BuyDrug(BaseDrug.DrugType drugType, float price)
+    {
+        if (Player  == null)
+        {
+            // Log.Error("PlayerStats is null.");
+            return;
+        }
+
+        if (!Player .UpdateBalance(-price))
+        {
+            Sound.Play("audio/error.sound");
+            return;
+        }
+
+        SpawnDrug(drugType);
+    }
+
+    void SpawnDrug(BaseDrug.DrugType drugType)
+{
+    // Calculate spawn position in front of the player
+    Vector3 spawnPosition = GameObject.Transform.Position + GameObject.Transform.Rotation.Forward * 60 + Vector3.Up * 40;
+    Rotation spawnRotation = GameObject.Transform.Rotation;
+
+    // Clone the drug prefab and set the position and rotation
+    GameObject drug = DrugPrefab.Clone(spawnPosition);
+    drug.Transform.Rotation = spawnRotation;
+
+    BaseDrug newDrugComponent = null;
+
+    // Add the appropriate derived component
+    switch (drugType)
+    {
+        case BaseDrug.DrugType.Shrooms:
+            newDrugComponent = drug.Components.GetOrCreate<Shrooms>();
+            break;
+        case BaseDrug.DrugType.LSD:
+            newDrugComponent = drug.Components.GetOrCreate<LSD>();
+            break;
+    }
+
+    // Ensure the drug is networked and visible to all clients
+    drug.NetworkSpawn();
+}
 
     [Property] public List<Model> Props { get; set; } = new List<Model>();
     private List<Package> CloudPackages { get; set; } = new List<Package>();

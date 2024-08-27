@@ -1,0 +1,48 @@
+{
+  "RootObject": {
+    "__guid": "c23b7ebd-b330-4999-b239-284c81c1f1d1",
+    "Flags": 0,
+    "Name": "drug",
+    "Tags": "interact,interactable,drug,grab",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Sandbox.Rigidbody",
+        "__guid": "0a3cd42e-529b-4a33-a59c-ad06edc45be3",
+        "AngularDamping": 0,
+        "Gravity": true,
+        "LinearDamping": 0,
+        "Locking": {},
+        "MassCenterOverride": "0,0,0",
+        "MassOverride": 0,
+        "MotionEnabled": true,
+        "OverrideMassCenter": false,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      },
+      {
+        "__type": "Sandbox.ModelRenderer",
+        "__guid": "9e89ecc7-9625-4806-a3d7-7f55836be680",
+        "BodyGroups": 18446744073709551615,
+        "Model": "models/citizen_props/sodacan01.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "Sandbox.ModelCollider",
+        "__guid": "4a669292-66e9-42c5-9a3f-859bb12f1a15",
+        "IsTrigger": false,
+        "Model": "models/citizen_props/sodacan01.vmdl",
+        "Static": false
+      }
+    ],
+    "Children": [],
+    "__variables": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}
