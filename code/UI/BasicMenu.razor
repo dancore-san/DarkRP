@@ -1,13 +1,15 @@
+@using System
 @using Sandbox;
 @using Sandbox.UI;
-@using GameSystems;
-@using GameSystems.Jobs;
-@using GameSystems.Player;
 @using System.Threading.Tasks;
-@using Entity.Interactable.Props;
-@using Entity.Interactable.Printer;
 @using System.Text.RegularExpressions;
 @using System;
+@using global::Entity.Interactable.Printer
+@using global::Entity.Interactable.Props
+@using global::GameSystems
+@using global::GameSystems.Jobs
+@using Sandbox.Entities.Interactable.Props
+@using Sandbox.GameSystems.Player
 
 @inherits PanelComponent;
 
@@ -18,8 +20,8 @@
         <div class="side-bar">
             <div class="player-container">
                 <div class="name">@(Rpc.Caller.DisplayName.Truncate(13))</div>
-                <div class="wallet">$@(playerStats.Balance.ToString("N0"))</div>
-                <div class="sub">Salary:<span>$@(playerStats.Job.Salary.ToString("N0"))</span></div>
+                <div class="wallet">$@(Player.Balance.ToString("N0"))</div>
+                <div class="sub">Salary:<span>$@(GameController.Instance.GetMe().Job.Salary.ToString("N0"))</span></div>
             </div>
             <div class="navigation">
                 <div class="buttoncontainer">
@@ -101,14 +103,14 @@
             <div class="section" style="display: @(IsJobsVisible ? "flex" : "none");">
                 <div class="section-title">Jobs</div>
                 <div class="section-contents">
-                    @foreach (JobGroupResource group in GameController.JobSystem.JobGroups.Values)
+                    @foreach (var group in JobProvider.JobGroups.Values)
                     {
                         <div class="section-job-group">
                             <div class="section-job-titel" style="background-color: rgba(@(group.Color.r * 255), @(group.Color.g * 255), @(group.Color.b * 255), @(group.Color.a * 255))">@group.Name</div>
                             <div class="section-job-list">
-                                @foreach (JobResource job in GameController.JobSystem.Jobs.Values.Where(x => x.Group == group))
+                                @foreach (var job in JobProvider.Jobs.Values.Where(x => x.Group == group))
                                 {
-                                    <div class="section-job button" onclick="@(() => playerStats.SelectJob(job))">
+                                    <div class="section-job button" onclick="@(() => GameController.SelectJob(Player.Network.OwnerId, job))">
                                         <div class="icon"></div>
                                         <div class="label-container">
                                             <div class="label">@job.Name</div>
@@ -172,22 +174,21 @@
             <div class="section" style="display: @(IsInfoVisible ? "flex" : "none");">
                 <div class="section-title">Information</div>
                 <div class="section-contents">
-                    <div class="info" style="color: #556B2F;">
-                        <h1>Completed</h1>
-                        <p>@InfoDone</p>
-                    </div>
-                    <div class="info" style="color: #8B0000;">
-                        <h1>TODO</h1>
-                        <p>@InfoTodo</p>
-                    </div>
-                    <div class="info" style="color: #DAA520;">
+                    <div class="info" style="color: white;">
                         <h1>Notes</h1>
                         <p>@InfoNotes</p>
                     </div>
+
                     <div class="info" style="color: #DCDCDC;">
                         <h1>Credits</h1>
                         <p>@InfoCredits</p>
                     </div>
+
+                    <div class="info" style="color: #DAA520; ">
+                        <h1>Controls</h1>
+                        <ul style="flex-direction:column; font-size:20px;"> @foreach(var control in Controls) { <li> @control</li> } </ul>
+                    </div>
+
                 </div>
             </div>
 
@@ -206,8 +207,7 @@
 
 @code {
     [Property] GameObject PrinterPrefab { get; set; }
-    [Property] GameObject PlayerPrefab { get; set; }
-    private Stats playerStats => PlayerPrefab.Components.Get<Stats>();
+    [Property] Player Player { get; set; }
     
     // Everything related to printers
     int MaxPrinter = 5;
@@ -223,8 +223,7 @@
             return;
         }
 
-        var playerStats = PlayerPrefab.Components.Get<Stats>();
-        if (!playerStats.UpdateBalance(-price))
+        if (!Player.UpdateBalance(-price))
         {
             return; // Not enough money, error sound is handled elsewhere
         }
@@ -245,17 +244,16 @@
     private GameController GameController;
 
     // Information tab properties
-    [Property, TextArea] public string InfoDone { get; set; } = "Completed tasks...";
-    [Property, TextArea] public string InfoTodo { get; set; } = "Pending tasks...";
     [Property, TextArea] public string InfoNotes { get; set; } = "Important notes...";
     [Property, TextArea] public string InfoCredits { get; set; } = "Credits for the team...";
+    [Property] public List<String> Controls { get; set; }
 
     protected override void OnStart()
     {
         try
         {
             PropManager = GameObject.Parent.Components.Get<PropToolManager>();
-            GameController = GameSystems.GameController.Instance;
+            GameController = GameController.Instance;
 
             // Load Cloud Packages
             _ = LoadCloudPackages("model");
@@ -440,5 +438,5 @@
         }
     }
 
-    protected override int BuildHash() => System.HashCode.Combine(InfoDone, InfoTodo, InfoNotes, PropManager?.PropCount());
+    protected override int BuildHash() => System.HashCode.Combine(PropManager?.PropCount());
 }
